@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Lista de enlaces de navegación (Ajusta los IDs según los que uses en tus secciones)
+// Lista de enlaces de navegación (Asegúrate de que estos IDs existan en tus secciones)
 const navLinks = [
   { title: 'Inicio', id: 'hero' },
   { title: 'El Libro', id: 'featured-book' },
@@ -40,22 +40,14 @@ export default function Navbar() {
       {/* ----------------------------------------------------- */}
       {/* 1. BARRA DE NAVEGACIÓN FIJA (Siempre visible)         */}
       {/* ----------------------------------------------------- */}
-      <header className="fixed top-0 left-0 w-full p-6 md:p-12 z-40 flex justify-between items-center pointer-events-none mix-blend-difference text-[#e5e5e0]">
+      <header className="fixed top-0 left-0 w-full p-6 md:p-12 z-40 flex justify-end items-center pointer-events-none mix-blend-difference text-[#e5e5e0]">
         
-        {/* Logo / Marca */}
-        <div className="pointer-events-auto cursor-pointer flex items-center gap-4" onClick={() => handleScroll('hero')}>
-          <span className="font-sans font-black text-xl tracking-tighter">N.L.</span>
-          <span className="hidden md:inline-block font-sans text-[9px] uppercase tracking-[0.4em] opacity-80">
-            
-          </span>
-        </div>
-
-        {/* Botón de Menú */}
+        {/* Botón de Menú (Único elemento en la cabecera) */}
         <button 
           onClick={() => setIsOpen(true)}
           className="pointer-events-auto group flex items-center gap-4 cursor-pointer"
         >
-          <span className="font-sans text-[10px] uppercase tracking-[0.3em] font-bold group-hover:opacity-70 transition-opacity">
+          <span className="font-modern font-bold text-[10px] uppercase tracking-[0.3em] group-hover:opacity-70 transition-opacity">
             Menú
           </span>
           <div className="w-8 h-[2px] bg-[#e5e5e0] group-hover:w-12 transition-all duration-300"></div>
@@ -77,14 +69,14 @@ export default function Navbar() {
             
             {/* Cabecera interna del Menú */}
             <div className="w-full p-6 md:p-12 flex justify-between items-center">
-              <span className="font-sans text-[10px] uppercase tracking-[0.4em] opacity-50">
+              <span className="font-modern font-bold text-[10px] uppercase tracking-[0.4em] opacity-50">
                 Navegación
               </span>
               <button 
                 onClick={() => setIsOpen(false)}
                 className="group flex items-center gap-4 cursor-pointer"
               >
-                <span className="font-sans text-[10px] uppercase tracking-[0.3em] opacity-60 group-hover:opacity-100 transition-opacity">
+                <span className="font-modern font-bold text-[10px] uppercase tracking-[0.3em] opacity-60 group-hover:opacity-100 transition-opacity">
                   Cerrar
                 </span>
                 <div className="w-10 h-10 rounded-full border border-[#2a2a2a] flex items-center justify-center group-hover:border-[#e5e5e0] transition-colors">
@@ -106,12 +98,12 @@ export default function Navbar() {
                   >
                     <button 
                       onClick={() => handleScroll(link.id)}
-                      className="group flex items-center gap-8 text-left"
+                      className="group flex items-center gap-8 text-left w-full"
                     >
-                      <span className="font-sans text-[10px] uppercase tracking-[0.3em] opacity-40 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="font-modern font-bold text-[10px] uppercase tracking-[0.3em] opacity-40 group-hover:opacity-100 transition-opacity duration-300 w-12 hidden md:block">
                         0{i + 1}
                       </span>
-                      <span className="font-serif text-5xl md:text-7xl lg:text-[7rem] italic text-[#555] group-hover:text-[#e5e5e0] transition-colors duration-500 tracking-tight leading-none">
+                      <span className="font-editorial text-5xl md:text-7xl lg:text-[7rem] italic text-[#555] group-hover:text-[#e5e5e0] transition-colors duration-500 tracking-tight leading-none">
                         {link.title}
                       </span>
                     </button>
@@ -123,10 +115,10 @@ export default function Navbar() {
             {/* Footer del Menú */}
             <div className="w-full p-6 md:p-12 flex justify-between items-end border-t border-[#1a1a1a]">
               <div className="flex flex-col gap-2">
-                <span className="font-sans text-[9px] uppercase tracking-[0.3em] opacity-50">Redes</span>
-                <a href="#" className="font-sans text-xs uppercase tracking-widest hover:text-[#cbfb45] transition-colors">Instagram ↗</a>
+                <span className="font-modern font-bold text-[9px] uppercase tracking-[0.3em] opacity-50">Redes</span>
+                <a href="#" className="font-modern font-bold text-xs uppercase tracking-widest hover:text-[#cbfb45] transition-colors">Instagram ↗</a>
               </div>
-              <span className="font-sans text-[9px] uppercase tracking-[0.4em] opacity-30 text-right">
+              <span className="font-modern font-bold text-[9px] uppercase tracking-[0.4em] opacity-30 text-right">
                 Natalia Lara <br/> © {new Date().getFullYear()}
               </span>
             </div>

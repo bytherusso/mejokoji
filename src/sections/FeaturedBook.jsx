@@ -53,7 +53,8 @@ export default function FeaturedBook({ bookData }) {
   const backCoverUrl = bookData.backCover ? urlFor(bookData.backCover).url() : null;
 
   return (
-    <section className="relative w-full bg-[#f4f4f0] text-[#0a0a0a] py-32 px-4 md:px-8 border-t-2 border-[#0a0a0a] overflow-hidden">
+    
+    <section id="featured-book" className="relative w-full bg-[#f4f4f0] text-[#0a0a0a] py-32 px-4 md:px-8 border-t-2 border-[#0a0a0a] overflow-hidden">
       <div className="w-full max-w-[90rem] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         
         {/* COLUMNA IZQUIERDA: Escenario 3D Interactivo */}

@@ -44,7 +44,12 @@ export default function App() {
       try {
         // Traemos todo en paralelo para optimizar la carga
         const [poemsData, featuredData, collabsData] = await Promise.all([
-          client.fetch(`*[_type == "poem"] | order(_createdAt desc)`),
+          // LA MAGIA ESTÁ AQUÍ: Le pedimos a Sanity que convierta el archivo en un Link (URL)
+          client.fetch(`*[_type == "poem"] | order(_createdAt desc) {
+            ...,
+            "videoUrl": videoUrl.asset->url,
+            "audioUrl": audioUrl.asset->url
+          }`),
           client.fetch(`*[_type == "book" && isFeatured == true][0]`),
           client.fetch(`*[_type == "book" && isFeatured != true] | order(_createdAt desc)`)
         ]);

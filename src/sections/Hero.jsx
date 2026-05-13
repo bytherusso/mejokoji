@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 export default function Hero() {
   return (
     // Fondo negro profundo, sin líneas, sin distracciones
-    <section className="relative w-full min-h-screen bg-[#050505] flex flex-col justify-center overflow-hidden pt-20">
+    <section id="hero" className="relative w-full min-h-screen bg-[#050505] flex flex-col justify-center overflow-hidden pt-20">
       <div className="w-full max-w-[100rem] mx-auto px-4 md:px-12 flex flex-col justify-center">
 
         {/* Contenedor Tipográfico: tracking ajustado y line-height aplastado para el efecto editorial */}
